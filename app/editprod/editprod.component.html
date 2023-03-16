@@ -1,0 +1,63 @@
+
+<div class="container" style="margin-top: 15px;">
+    <h1 class="mb-0">Update Product Details</h1>
+</div>
+<hr/>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-6 col-sm-9 col-xl-6">
+            <div class="card shadow-sm" style="margin-top: 8px;">
+                <div class="card-header"><span>Update product</span></div>
+                <div class="card-body">   
+    <a mat-raised-button class="btn btn-info" routerLink="/productsadmin" >Back</a>
+    <form #g="ngForm" (ngSubmit)="submit(g)">
+           <div class="form-group">
+            <label >ProductId</label>
+            <input 
+                
+                name="productId" 
+                type="text" [(ngModel)]="product.productId"
+                class="form-control" placeholder="Enter Name"/>
+        </div>
+
+        <div class="form-group">
+            <label >Product name</label>
+            <input 
+                
+                name="name" 
+                type="text" [(ngModel)]="product.name"
+                class="form-control" placeholder="Enter Name"/>
+        </div>
+
+        <div class="form-group">
+            <label >Price</label>
+            <input 
+                
+                name="price" 
+                type="number" [(ngModel)]="product.price"
+                class="form-control" placeholder="Enter Price"/>
+        </div>
+
+        <div class="form-group">
+            <label >Product Description</label>
+            <input 
+                
+                name="description" 
+                type="text" [(ngModel)]="product.description"
+                class="form-control" placeholder="Enter product description"/>
+        </div>
+	   <div class="form-group">
+            <label >Stock</label>
+            <input 
+                
+                name="quantityInStock" 
+                type="number" [(ngModel)]="product.quantityInStock"
+                class="form-control" placeholder="Enter quantity in stock" />
+        </div>
+        <a mat-raised-button class="btn btn-primary" type="submit" (click)=submit(g)>Update</a>
+    </form>
+		   </div>
+            </div>
+        </div>
+    </div>
+</div>

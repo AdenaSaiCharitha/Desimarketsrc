@@ -1,0 +1,37 @@
+<div class="about-section">
+  <h1>Orders</h1>
+</div>
+<div class="container">
+<br>
+      <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>UserId</th>
+		    <th>ProductId</th>
+		    <th>Quantity</th>
+		    <th>OrderDate</th>
+                <th>TotalPrice</th>
+		    <th>Status</th>
+                <th width="300px">Action</th>
+              </tr>
+        </thead>
+	  <tbody>
+              <tr *ngFor="let order of allOrders | async">
+                <td>{{ order.id }}</td>
+                <td>{{ order.userId }}</td>
+                <td>{{ order.productId }}</td>
+		    <td>{{ order.quantity }}</td>
+		    <td>{{ order.orderDate }}</td>
+		    <td>{{ order.totalPrice }}</td>
+		    <td>{{ order.status }}</td>
+                <td>
+			<a mat-button class="btn btn-primary" (click)=delivered(order.id)>Delivered</a>
+			<a mat-button class="btn btn-danger" (click)=cancel(order.id)>Cancel</a>
+             	<a mat-button class="btn btn-danger" (click)="deleteorder(order.id)" >Delete</a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>
+

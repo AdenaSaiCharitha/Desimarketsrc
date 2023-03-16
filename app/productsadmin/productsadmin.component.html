@@ -1,0 +1,33 @@
+<div class="about-section">
+  <h1>Products</h1>
+</div>
+<div class="container">
+<br>
+	 <a  routerLink="/productsadmin/create" class="btn btn-success">Add new product</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>name</th>
+		          <th>Price</th>
+		          <th>Description</th>
+		          <th>Stock</th>
+              <th width="250px">Action</th>
+          </tr>
+        </thead>
+	  <tbody>
+              <tr *ngFor="let products of allproducts | async">
+                <td>{{ products.productId }}</td>
+                <td>{{ products.name }}</td>
+                <td>{{ products.price }}</td>
+		            <td>{{ products.description }}</td>
+		            <td>{{ products.quantityInStock }}</td>
+                <td>
+                  <a mat-button class="btn btn-info" [routerLink]="[products.productId,'view']">View</a>
+                  <a mat-button class="btn btn-primary" [routerLink]="[products.productId,'edit']">Edit</a>
+             	<a mat-button class="btn btn-danger" (click)="deleteproduct(products.productId)" >Delete</a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>

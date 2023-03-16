@@ -1,0 +1,38 @@
+<div class="about-section">
+  <h1>Users</h1>
+</div>
+<div class="container">
+<br>
+      <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>Email</th>
+		    <th>Password</th>
+		    <th>Name</th>
+		    <th>IsAdmin</th>
+                <th>Address</th>
+		    <th>Phone Number</th>
+		    <th>Pincode</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+	  <tbody>
+              <tr *ngFor="let user of allUsers | async">
+                <td>{{ user.userId }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+		    <td>{{ user.name }}</td>
+		    <td>{{ user.isAdmin }}</td>
+		    <td>{{ user.address }}</td>
+		    <td>{{ user.phoneNumber }}</td>
+		    <td>{{ user.pincode}}</td>
+                <td>
+                  <a mat-button class="btn btn-info" [routerLink]="[user.userId,'view']">View</a>
+                  <a mat-button class="btn btn-primary" [routerLink]="[user.userId,'edit']">Edit</a>
+             	<a mat-button class="btn btn-danger" (click)="deleteUser(user.userId)" >Delete</a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>

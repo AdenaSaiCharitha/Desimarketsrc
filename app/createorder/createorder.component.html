@@ -1,0 +1,94 @@
+<div class="container" style="margin-top: 15px;">
+    <h1 class="mb-0">New Product</h1>
+</div>
+<hr/>
+<a mat-button color="primary" routerLink= "/productsuser">Back</a>
+<div class="container">
+    <h1>Product Details</h1>
+    <div>
+        <strong>ID:    {{ product.productId }}</strong>
+    </div>
+   
+    <div>
+        <strong>Product Name :{{ product.name }}</strong>
+    </div>
+   
+    <div>
+        <strong>Price:{{ product.price }}</strong>
+    </div>
+
+    <div>
+        <strong>Description:{{ product.description }}</strong>
+    </div>
+    <div>
+        <strong>Quantity in Stock : {{ product.quantityInStock }}</strong>
+    </div>
+        <div>
+        <p>Orders will be delivered to user's address</p>
+	  <p>Cash On Delivery is acceptable</p>
+    </div>
+    
+</div>
+
+
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-6 col-sm-9 col-xl-6">
+            <div class="card shadow-sm" style="margin-top: 8px;">
+                <div class="card-header"><span>Add Information</span></div>
+                <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="userId">userId</label>
+            <input 
+                formControlName="userId"
+                id="userId" 
+                type="number" [(ngModel)]="users.userId"
+                class="form-control" placeholder="enter userid"/> 
+            <div *ngIf="f['userId'].touched && f['userId'].invalid" class="alert alert-danger">
+                <div *ngIf="f['userId'].errors && f['userId'].errors['required']">Product Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productId">ProductId</label>
+            <input 
+                formControlName="productId"
+                id="productId" 
+                type="number" [(ngModel)]="product.productId"
+                class="form-control" placeholder="Enter ProductId"/>
+            <div *ngIf="f['productId'].touched && f['productId'].invalid" class="alert alert-danger">
+                <div *ngIf="f['productId'].errors && f['productId'].errors['required']">product price is required.</div>
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input 
+                formControlName="quantity"
+                id="quantity" 
+                type="number" 
+                class="form-control" placeholder="Enter quantity" />
+            <div *ngIf="f['quantity'].touched && f['quantity'].invalid" class="alert alert-danger">
+                <div *ngIf="f['quantity'].errors && f['quantity'].errors['required']">stock number is required.</div>
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="totalPrice">Total Price:</label>
+            <input 
+                formControlName="totalPrice"
+                id="totalPrice" 
+                type="number" 
+                class="form-control" placeholder="Quatity * ProductPrice" />
+            <div *ngIf="f['totalPrice'].touched && f['totalPrice'].invalid" class="alert alert-danger">
+                <div *ngIf="f['totalPrice'].errors && f['totalPrice'].errors['required']">Product price is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+         
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

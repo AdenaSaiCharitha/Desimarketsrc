@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Users</h2>
+      <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+		    <th>ProductId</th>
+		    <th>Quantity</th>
+		    <th>OrderDate</th>
+                <th>TotalPrice</th>
+		    <th>Status</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+	  <tbody>
+              <tr *ngFor="let order of allOrders | async">
+                <td>{{ order.id }}</td>
+                <td>{{ order.productId }}</td>
+		    <td>{{ order.quantity }}</td>
+		    <td>{{ order.orderDate }}</td>
+		    <td>{{ order.totalPrice }}</td>
+		    <td>{{ order.status }}</td>
+                <td>
+                  <a mat-button class="btn btn-info" [routerLink]="[order.id,'view']">View</a>
+			<a mat-button class="btn btn-primary" (click)=cancel(order.id)>Cancel</a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>

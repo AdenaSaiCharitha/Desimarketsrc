@@ -1,0 +1,22 @@
+mat-sidenav{
+    background-color: cadetblue;
+	width :230px;
+	height : 100%;
+}
+mat-sidenav-content{
+    height : 100vh;
+	
+}
+img{
+height : 150px;
+width :100px;
+}
+.extra{
+flex:1 1 auto;}
+/*.dropdowns{
+display:flex;
+justify-content : center;
+gap:10px;
+align-items:center;
+height:100vh;
+}*/

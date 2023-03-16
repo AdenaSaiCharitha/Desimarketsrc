@@ -1,0 +1,98 @@
+
+<div class="container" style="margin-top: 15px;">
+    <h1 class="mb-0">Update User Details</h1>
+</div>
+<hr/>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-6 col-sm-9 col-xl-6">
+            <div class="card shadow-sm" style="margin-top: 8px;">
+                <div class="card-header"><span>Update user details</span></div>
+                <div class="card-body">   
+    <a mat-raised-button class="btn btn-info" routerLink="" >Back</a>
+          
+    
+    <form #g="ngForm" (ngSubmit)="submit(g)">
+       <div class="form-group">
+            <label for="userId">UserId</label>
+            <input 
+                readonly
+                name="userId" 
+                type="number" [(ngModel)]="users.userId"
+                class="form-control" >
+            
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+                 name="email"   readonly
+                type="text" [(ngModel)]="users.email"
+                class="form-control" placeholder="Enter email">
+           
+        </div>
+  
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+   
+                name="password" 
+                type="text" [(ngModel)]="users.password"
+                class="form-control" placeholder="Enter password"/>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="name">name</label>
+            <input 
+                
+                name="name" 
+                type="text" [(ngModel)]="users.name"
+                class="form-control" placeholder="Enter Name"/>
+            
+        </div>
+        <div class="form-group">
+            <label for="isAdmin">IsAdmin</label>
+            <input 
+                
+                name="isAdmin"  readonly
+                type="text" [(ngModel)]="users.isAdmin"
+                class="form-control" placeholder="true or false"/>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="address">address</label>
+            <input 
+                
+                name="address" 
+                type="text" [(ngModel)]="users.address"
+                class="form-control" placeholder="Enter Address"/>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">phoneNumber</label>
+            <input 
+                
+                name="phoneNumber" 
+                type="text" [(ngModel)]="users.phoneNumber"
+                class="form-control" placeholder="Enter PhoneNumber"/>
+            
+        </div>
+	   <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input 
+                
+                name="pincode" 
+                type="number" [(ngModel)]="users.pincode"
+                class="form-control" placeholder="Enter Pincode" />
+            
+        </div>
+
+        <a mat-raised-button class="btn btn-primary" type="submit" (click)=submit(g)>Update</a>
+    </form>
+		   </div>
+            </div>
+        </div>
+    </div>
+</div>

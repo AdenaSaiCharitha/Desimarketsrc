@@ -1,0 +1,31 @@
+<div class="about-section">
+  <h1>Products</h1>
+</div>
+<div class="container">
+<br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>name</th>
+		  <th>Price</th>
+		  <th>Description</th>
+              <th>Stock</th>
+              <th width="200px">Action</th>
+          </tr>
+        </thead>
+	  <tbody>
+              <tr *ngFor="let products of allproducts | async">
+                <td>{{ products.productId }}</td>
+                <td>{{ products.name }}</td>
+                <td>{{ products.price }}</td>
+		    <td>{{ products.description }}</td>
+		    <td>{{ products.quantityInStock }}</td>
+                <td>
+                  <a mat-button class="btn btn-info" [routerLink]="[products.productId,'view']">View</a>
+                  <a mat-button class="btn btn-primary" [routerLink]="[products.productId,'createorder']" >Order</a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>
